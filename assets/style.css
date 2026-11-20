@@ -802,3 +802,159 @@ a,button,select,summary,label[for],input[type=checkbox],[role=button]{cursor:url
 .about-stage .fbook{width:17%}
 @media (max-width:1024px){.about-stage{margin-inline:auto}}
 @media (max-width:720px){.about-stage .fbook{width:20%}}
+
+/* ===== mobile hardening ===== */
+html,body{overflow-x:clip;max-width:100%}
+@media (max-width:720px){.halo{width:110%}}
+
+/* ================= MOBILE PASS (phones) ================= */
+@media (max-width:720px){
+  /* header: one tidy line */
+  .site-header{padding-top:8px}
+  .board{border-width:5px;width:calc(100% - 16px)}
+  .hdr{gap:6px;padding:8px 8px 10px}
+  .brand{gap:8px;min-width:0;margin-right:auto}
+  .brand .bt{min-width:0}
+  .chalk-logo{width:36px;height:36px;margin-left:0}
+  .brand-name{font-size:25px;white-space:nowrap}
+  .tagline{display:none}
+  .site-header.small .brand-name{font-size:23px}
+  .site-header.small .chalk-logo{width:32px;height:32px}
+  .hdr-icons{gap:6px}
+  .hdr-icons .icon-btn{width:40px;height:40px}
+  .hdr-icons .icon-btn:nth-child(2){display:none}
+  .menu-btn{width:40px;height:40px}
+  .string{display:none}
+  .notice{margin-top:14px;padding:6px 16px 0;font-size:14.5px;line-height:1.5}
+  .notice span{display:none}
+  /* calmer background and no doodle clutter */
+  .bloom{opacity:.4}
+  .doodle.d2,.doodle.d3,.doodle.d5{display:none}
+  .hero{padding:var(--s4) 0 var(--s3)}
+  .hero h1{font-size:40px}
+  .hero p.lead{font-size:17px}
+  /* category tiles: 2 x 2 */
+  .tiles{grid-template-columns:1fr 1fr;gap:12px}
+  .tiles .tile-img{aspect-ratio:4/5}
+  /* product cards: compact horizontal layout */
+  .grid{gap:14px}
+  .card{display:grid;grid-template-columns:132px 1fr;column-gap:14px;padding:10px;align-items:start}
+  .card .cover{padding:4px;box-shadow:inset 0 0 0 3px var(--wheat)}
+  .cat-chip{display:none}
+  .card .cover .sale-badge{width:42px;height:42px;font-size:10.5px;top:6px;right:6px;box-shadow:0 3px 5px rgba(75,58,33,.4),inset 0 0 0 3px #7a3638}
+  .card-body{padding:2px 0 0}
+  .card-body::after{display:none}
+  .card h3{font-size:21px}
+  .card .by{font-size:16px}
+  .card .meta{margin-top:4px;padding-top:6px;font-size:13.5px}
+  .card-foot{flex-direction:column;align-items:stretch;gap:8px;padding-top:8px}
+  .card-foot .price{flex-direction:row;align-items:baseline;gap:8px}
+  .card-foot .btn{width:100%;min-height:44px}
+  .card:hover .cover{transform:none}
+  /* poem leaf */
+  .verse{font-size:20px;line-height:1.5}
+  .leaf.l1{padding:30px 46px;min-height:0}
+  /* author section: bigger portrait, tighter text */
+  .author-sec{padding:var(--s5) 0}
+  .author-grid>.reveal:first-child{width:100%;display:flex;justify-content:center}
+  .author-grid .owner-frame{width:min(100%,300px)}
+  .author-copy h2{font-size:38px!important}
+  .author-lead{font-size:21px}
+  .author-copy blockquote{font-size:22px;margin:24px 0 28px}
+  .sec-head h2{font-size:32px!important}
+  .page-head h1{font-size:38px}
+  .page-head{padding:var(--s4) 0 var(--s2)}
+  section{padding:var(--s4) 0}
+  /* footer stacks */
+  .foot-row{gap:14px}
+  .foot-links{gap:0 2px}
+  /* floating helper pills */
+  .cur{bottom:84px}
+  .totop{right:14px;bottom:14px}
+  .toast{max-width:calc(100% - 24px)}
+}
+
+@media (max-width:720px){
+  .badge{top:0;right:0}
+  .card .cover img{transform:scale(1.38)}
+  .card:hover .cover img{transform:scale(1.38)}
+  .verse{text-wrap:balance}
+  .author-lead{margin-bottom:14px}
+  .author-copy p{margin-bottom:0}
+  .foot-bar{text-align:left}
+}
+
+.badge[data-n="0"]{display:none}
+@media (max-width:720px){
+  .card .cover img,.card:hover .cover img{transform:scale(1.2)}
+  .badge{min-width:17px;height:17px;line-height:17px;font-size:11.5px;padding:0 4px;top:1px;right:1px}
+}
+
+/* chalk the icon drawing only, keep the count badge crisp */
+.icon-btn.chalk{filter:none}
+.icon-btn.chalk svg{filter:url(#chalk)}
+
+/* ===== mobile: tighter line-height + compact footer ===== */
+@media (max-width:720px){
+  body{line-height:1.55}
+  .hero p.lead,.page-head p,.sec-head p,.author-copy p,.author-lead,.faq-a p,.note,.panel-card p{line-height:1.5}
+  .hero p.lead{font-size:16.5px}
+  .author-lead{line-height:1.35}
+  .verse{line-height:1.42}
+  .card h3{line-height:1.12}
+  .card .by,.card .meta{line-height:1.35}
+  .faq-q{min-height:48px;padding:12px 0;font-size:22px;line-height:1.2}
+  .notice{line-height:1.4}
+  .sec-head h2,.page-head h1,.hero h1,.author-copy h2{line-height:1.08}
+  .letter p{line-height:30px;font-size:20px}
+  blockquote{line-height:1.3}
+  /* footer */
+  footer{margin-top:var(--s3);padding:18px 0 12px}
+  .foot-art{display:none}
+  .foot-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px 12px}
+  .foot-brand{grid-column:1;gap:10px}
+  .foot-brand .logo{width:34px;height:34px}
+  .foot-brand strong{font-size:21px}
+  .foot-brand em{font-size:14px;line-height:1.2}
+  .foot-row .soc{grid-column:2;gap:6px}
+  .foot-row .soc a{width:36px;height:36px}
+  .foot-row .soc svg{width:18px;height:18px}
+  .foot-links{grid-column:1/-1;gap:0 4px;justify-content:space-between}
+  .foot-links a{padding:6px 4px;min-height:38px;font-size:16.5px}
+  .foot-bar{margin-top:6px;padding-top:10px;font-size:13px}
+}
+@media (max-width:720px){
+  .foot-brand{grid-row:1}
+  .foot-row .soc{grid-row:1}
+  .foot-links{grid-row:2;justify-content:space-between;flex-wrap:nowrap;margin:0 -4px}
+  .foot-links a{padding:6px 4px;font-size:15.5px;letter-spacing:0}
+}
+
+/* ===== richer chalkboard sign: warmer wood frame, chalk-ruled inner border, dusty slate ===== */
+.board{
+  border:11px solid color-mix(in srgb,var(--oxblood) 82%,var(--olive));
+  border-radius:14px;
+  background-color:color-mix(in srgb,var(--forest-ink) 90%,var(--oxblood));
+  background-image:
+    radial-gradient(ellipse 38% 55% at 16% 38%,rgba(254,254,247,.075),transparent 70%),
+    radial-gradient(ellipse 30% 50% at 62% 78%,rgba(254,254,247,.06),transparent 70%),
+    radial-gradient(ellipse 26% 45% at 90% 25%,rgba(254,254,247,.05),transparent 70%),
+    repeating-linear-gradient(115deg,transparent 0 22px,rgba(254,254,247,.018) 22px 24px),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='5'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 .95  0 0 0 .09 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  box-shadow:
+    inset 0 0 0 2.5px color-mix(in srgb,var(--khaki) 78%,transparent),
+    inset 0 0 0 6px color-mix(in srgb,var(--forest-ink) 88%,var(--oxblood)),
+    inset 0 0 0 7.5px color-mix(in srgb,var(--sand) 38%,transparent),
+    inset 0 0 70px rgba(0,0,0,.2),
+    0 0 0 1.5px color-mix(in srgb,var(--olive) 70%,transparent),
+    0 3px 0 color-mix(in srgb,var(--oxblood) 70%,#000),
+    0 20px 32px -14px rgba(75,58,33,.6);
+}
+.string{background:var(--khaki)}
+.string::before{background:var(--khaki)}
+
+/* ===== currency switch: compact pill on phones ===== */
+@media (max-width:720px){
+  .cur{top:auto;bottom:14px;left:14px;right:auto;transform:none;flex-direction:row;gap:2px;padding:3px;border-radius:24px;opacity:.96}
+  .cur button{width:42px;height:38px;border-radius:20px;font-size:19px}
+}

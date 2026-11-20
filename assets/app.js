@@ -1,4 +1,4 @@
-/* Sayue Shop: shared behaviour for every page */
+﻿/* Sayue Shop: shared behaviour for every page */
 (function(){
 'use strict';
 var D=window.S,B=D.BRAND,esc=D.esc,byId=D.byId,cover=D.cover,CATS=D.CATS,CAT=D.CAT,ICONS=D.ICONS,PRODUCTS=D.PRODUCTS;
@@ -99,7 +99,7 @@ function addToCart(id,q,silent){
   var b=$('#cartCount');b.classList.remove('pulse');void b.offsetWidth;b.classList.add('pulse');var cb=$('#cartBtn');cb.classList.remove('swell');void cb.offsetWidth;cb.classList.add('swell');
   if(!silent)toast('Added to your cart');
 }
-function updateCart(){var n=count();$('#cartCount').textContent=n;$('#cartBtn').setAttribute('aria-label','Open cart, '+n+' item'+(n===1?'':'s'));renderCart();if(PAGE==='checkout'&&window.__renderCheckout)window.__renderCheckout()}
+function updateCart(){var n=count();$('#cartCount').textContent=n;$('#cartCount').setAttribute('data-n',n);$('#cartBtn').setAttribute('aria-label','Open cart, '+n+' item'+(n===1?'':'s'));renderCart();if(PAGE==='checkout'&&window.__renderCheckout)window.__renderCheckout()}
 function renderCart(){
   var b=$('#cartBody');
   if(!cart.length){b.innerHTML='<p class="cart-empty">Your cart is currently empty.</p><a class="btn ghost" href="shop.html">Continue browsing</a>';return}
@@ -294,7 +294,7 @@ if(PAGE==='about'){$('#socIg').href=B.instagram;$('#socYt').href=B.youtube}
   var arch=document.querySelector('.owner-arch .o-color');if(!arch)return;arch=arch.parentNode;
   var box=arch.getBoundingClientRect(),rest=function(){box=arch.getBoundingClientRect();return {x:box.width*.12,y:box.height*.62}};
   var r=rest(),x=r.x,y=r.y,tx=x,ty=y,run=false,rad=130;
-  function paint(){arch.style.setProperty('--mx',x+'px');arch.style.setProperty('--my',y+'px');arch.style.setProperty('--rad',rad+'px')}
+  function paint(){rad=Math.max(56,Math.round(box.width*.34));arch.style.setProperty('--mx',x+'px');arch.style.setProperty('--my',y+'px');arch.style.setProperty('--rad',rad+'px')}
   function tick(){x+=(tx-x)*.18;y+=(ty-y)*.18;paint();if(Math.abs(tx-x)>.4||Math.abs(ty-y)>.4)requestAnimationFrame(tick);else run=false}
   function go(){if(!run){run=true;requestAnimationFrame(tick)}}
   function move(e){box=arch.getBoundingClientRect();tx=e.clientX-box.left;ty=e.clientY-box.top;go()}
