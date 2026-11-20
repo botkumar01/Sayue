@@ -1,6 +1,6 @@
 /* Sayue Shop: shared data and helpers */
 window.S=(function(){
-var BRAND={name:'Sayue Shop',tagline:'A Sanctuary for Thought',author:'Sayue Verity',email:'[EMAIL]',
+var BRAND={name:'Sayue Shop',tagline:'A Sanctuary for Thought',author:'Sayue Verity',email:'sayueshop@proton.me',
   instagram:'https://www.instagram.com/sayue_verity',youtube:'https://youtube.com/@sayue_verity',live:'https://sayue.shop/'};
 var RATE=83; /* sample rate: 1 USD = 83 INR */
 var CATS=['Audiobooks','Poetry Books','Doctrine Books','Printables','Art & Posters','Bundles','Card Decks','Poetry Cards','Poetry Excerpts'];
